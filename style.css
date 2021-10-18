@@ -1,0 +1,151 @@
+/*
+    paleta de colores
+*/
+
+:root {
+    --fondo: #F0eee9;
+    --contraste: #b8b0aa;
+    --despliegue: #b09d7f;
+    --cierre: #4c4740;
+    --contra: #4b4f39;
+}
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--fondo);
+}
+
+header {
+    display: inline-block;
+    width: 100%;
+    height: 10vh;
+    padding: 2px;
+}   
+
+.title {
+    display: flex;
+    width: 100%;
+    height: 20px;
+    margin: 5px 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.title-descr {
+    display: flex;
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    width: 350px;
+    height: 250px;
+    flex-wrap: wrap;
+    padding: 10px 5px;
+    border-radius: 10px;
+    background-color: var(--despliegue);
+    box-shadow: 0 20px 25px -10px rgb(0, 0, 0, 0.5);
+}
+
+.title-square, .title-triangle, .title-circle {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-square h2, .title-triangle h2, .title-circle h2 {
+    text-align: center;
+    font-size: medium;
+    color: var(--fondo);
+}
+
+.form-square, .form-triangle, .form-circle {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-square--text, .form-triangle--text, .form-circle--text {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--fondo);
+}
+
+.container-input {
+    display: flex;
+    width: 100%;
+    height: 45%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-square--input, .form-triangle input, .form-circle--input {
+    width: 100px;
+    height: 25px;
+}
+
+.form-triangle .container-input {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.form-square--buttons, .form-triangle--buttons, .form-circle--buttons {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-square--buttons button, .form-triangle--buttons button, .form-circle--buttons button{
+    width: 100px;
+    height: 40px;
+    padding: 2px;
+    background-color: var(--fondo);
+    color: var(--cierre);
+    border: 2px solid var(--contra);
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h1{
+    font-size: large;
+    color: var(--cierre);
+}
+
