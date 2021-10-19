@@ -109,8 +109,10 @@ function calcularPerimetroTriangulo(){
 };
 
 function calcularAreaTriangulo(){
-    let altura = prompt("Ingrese el valor de la altura del triangulo: ");
+    let lado1 = document.getElementById("lado1Triangulo");
+    let lado2 = document.getElementById("lado2Triangulo");
     let base = document.getElementById("base");
+    let altura = typeTriangle(lado1.value, lado2.value, base.value);
     let area = areaTriangulo(altura*1, base.value*1);
     let tipoOperacion = "Area";
     let figura = "Triangulo";
@@ -140,4 +142,28 @@ function calcularAreaCirculo(){
     document.getElementById("typeOperation").innerHTML=tipoOperacion;
     document.getElementById("fig").innerHTML=figura;
     document.getElementById("resultado").innerHTML=area;
+};
+
+function typeTriangle(lado1, lado2, base) {
+    let tipoDeTriangulo;
+    let altura;
+    lado1 = lado1*1;
+    lado2 = lado2*1;
+    base = base*1;
+    switch (true){
+        case lado1*1 == lado2*1 && lado1*1 == base*1:
+            tipoDeTriangulo = "Equilatero";
+            altura = Math.sqrt(lado1*lado1+((base/2*base/2)))
+            break
+        case (lado1*1 === lado2*1 && lado1*1 != base*1) || (lado1*1 != lado2*1 && lado1*1 === base*1) ||  (lado1*1 != lado2*1 && lado2*1 === base*1):
+            tipoDeTriangulo = "Isóseles";
+            altura = Math.sqrt(lado1*lado1+((base/2*base/2)));
+            break
+        case lado1*1 != base*1 && lado1*1 != lado2*1 && base*1 != lado2*1:
+            tipoDeTriangulo = "Escaleno";
+            altura = 0;
+            break
+    };
+    document.getElementById("tipoDeTriangulo").innerHTML = `El tipo de triangulo que se muestra es ${tipoDeTriangulo}`;
+    return altura;
 };
